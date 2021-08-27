@@ -1,0 +1,256 @@
+<script>
+	let links = [
+		{ id: 'https://alternativy.github.io/', name: 'La Botonera' },
+		{ id: 'https://stickers-alternativy.web.app/', name: 'Stickers' }
+	];
+	let playlist = [
+		{ id: 'https://www.youtube.com/playlist?list=PL6S-p3IkYGMiGZBwaLjhp7KF34avIiH8n', name: 'Playlist de youtube' }
+	];
+</script>
+<style>
+	/*universal*/
+* {
+	font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+    text-rendering: optimizeLegibility;
+	margin: 0px;
+	scroll-behavior: smooth;
+}
+
+body{
+	background-color: #f0f0f0;
+	margin: 0px;
+}
+
+/*header*/
+h1 {
+	background-color: #075E54;
+	color: white;
+	margin: 0px;
+	padding-left: 30px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+h2 {
+	background-color: #075E54;
+	color: white;
+	margin: 0px;
+	text-align: left;
+	padding-bottom: 20px;
+	padding-left: 31px;
+}
+
+img{
+	border-radius: 500px;
+	width: 64px;
+	height: 64px;
+	vertical-align: sub;
+}
+b{
+	vertical-align: super;
+	line-height: 100px;
+}
+/*nav*/
+nav{
+	text-align: center;
+	background-color: #ffffff;
+	border-style: ridge;
+	border-width: 1px;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	box-shadow: 0px 0px 5px 0px;
+}
+/*buscador alfabeticico*/
+nav {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0px;
+	width: 100%;
+	z-index: 100;
+	display: flex;
+	justify-content: space-around;
+}
+/*pal responsive*/
+@media(max-width: 600px){
+	nav{
+		overflow-x: scroll;
+		justify-content: normal;
+	}
+	a{
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+}
+i{
+	font-family: serif;
+	font-weight: bolder;
+}
+
+ul{
+	padding-left: 0px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom:5px;
+	margin-left: 100px;
+	padding-left: 50px;
+	background-color: #ffffff;
+	text-align: left;
+	border-width: 1px;
+	border-radius:20px 20px 0px 20px;
+	border-style: solid;
+	box-shadow: 0 0 10px black;
+	color: rgb(255,255,255);
+}
+
+small{
+	background-color: #075E54;
+	border-color: #075E54;
+	border-radius: 50px;
+	border-style: solid;
+}
+
+/*nav and content*/
+
+li{
+	margin-left: 100px;
+	padding: 8px;
+}
+
+/*content*/
+
+fieldset{
+	border-radius: 20px 20px 20px 0px;
+	background-color: #dcf8c6;
+	box-shadow: 0 0 5px;
+	margin-right: 100px;
+	margin-bottom: 5px;
+}
+
+legend{
+	border-style: outset;
+	font-weight: bold;
+	margin-left: 0px;
+ 	background-color: #075E54;
+ 	color: white;
+ 	padding: 10px 10px;
+ 	border-radius: 50px 50px 50px 0px;
+}
+
+p{
+	padding-left: 38px
+}
+
+/*nav and footer*/
+
+a{
+	font-weight: bold;
+	font-size: 120%;
+	text-decoration: none;
+	color: rgb(15, 15, 15);
+}
+
+/*header, nav and content in "alfabetico.html*/
+
+brillo{
+	background: url(https://i.pinimg.com/originals/20/07/0a/20070a560744e6461228dde960be2829.png);
+	background-size: 20px;
+	padding: 0px 10px;
+}
+
+.emoji{
+	background-size: 42px;
+	padding: 1px 20px;
+	vertical-align: super;
+	line-height: 100px;
+}
+
+/*footer*/
+
+footer{
+	text-align: center;
+	padding: 20px;
+}
+
+h4{
+	padding: 20px;
+}
+
+/*content in "alfabetico.html*/
+
+h3{
+	margin: 15px 200px;
+	border-radius:10px;
+	border-style: outset;
+	text-align: center;
+	border-width: 1px;
+	background-color: #e0f1fa;
+}
+/*
+ol{
+	width: 60%;
+}
+*/
+article h1{
+	background-color: #f0f0f0;
+	margin: 5px;
+	border-radius: 1px;
+	border: solid;
+}
+/*.button{
+	padding: 10px;
+	margin: 50px;
+	border-radius: 0px;
+	background-color: #075E54;
+	height: 45px;
+	color: rgb(255, 255, 255);
+	width: 400px;
+	line-height: 10px;
+	vertical-align: super;
+	border-style: solid;
+	border-radius: 50px;
+}*/
+body{
+	max-width: 100%;
+}
+/*no hace falta porque fue reemplazado
+button:hover{
+	background-color: #075F21;
+	border-color: skyblue;
+}
+*/
+.RandomAudio{
+	cursor: pointer;
+}
+/*.container{
+	display: inline-block;
+
+}
+*/
+</style>
+<div>
+<h2>Paginas Web</h2>
+	<p>
+		Audiovisuales en los que participé
+</p>
+
+<ul>
+	{#each links as { id, name }, i}
+		<li><a target="_blank" href="{id}">
+			{i + 1}: {name}
+		</a></li>
+	{/each}
+</ul>
+
+<h2>Playlist de Videos</h2>
+	<p>
+		Audiovisuales en los que participé
+</p>
+
+<ul>
+	{#each playlist as { id, name }, i}
+		<li><a target="_blank" href="{id}">
+			{i + 1}: {name}
+		</a></li>
+	{/each}
+</ul>
+</div>
